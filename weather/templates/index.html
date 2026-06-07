@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data Analysis & Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <div class="weather-card">
+
+        <div class="header">
+
+            <div class="icon">🌦️</div>
+
+            <h1>WEATHER</h1>
+
+            <h2>DATA ANALYSIS & PREDICTION</h2>
+
+        </div>
+
+        <form method="POST">
+
+            <input
+                type="number"
+                name="day"
+                placeholder="Enter Future Day Number"
+                required>
+
+            <button type="submit">
+                Predict Temperature
+            </button>
+
+        </form>
+
+        {% if prediction %}
+
+        <div class="result-box">
+
+            <h3>Predicted Temperature</h3>
+
+            <span>{{ prediction }} °C</span>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
